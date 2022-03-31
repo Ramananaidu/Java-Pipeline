@@ -10,15 +10,6 @@ pool:
   vmImage: windows-latest
 
 steps:
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'sonar-java'
-    scannerMode: 'Other'
-    extraProperties: |
-      # Additional properties that will be passed to the scanner,
-      # Put one key=value per line, example:
-      # sonar.exclusions=**/*.bin
-      sonar.projectKey=Java-Pipeline_Java-Pipeline
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
@@ -34,7 +25,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: SonarQubeAnalyze@5
+
 
 - task: PublishBuildArtifacts@1
   inputs:
