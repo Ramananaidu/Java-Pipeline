@@ -10,11 +10,13 @@ pool:
   vmImage: windows-latest
 
 steps:
+
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -25,7 +27,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
+- task: SonarQubeAnalyze@5
 
 - task: PublishBuildArtifacts@1
   inputs:
