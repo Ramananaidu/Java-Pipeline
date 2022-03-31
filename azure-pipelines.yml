@@ -13,9 +13,7 @@ steps:
 - task: SonarQubePrepare@5
   inputs:
     SonarQube: 'Java-Sonar'
-    scannerMode: 'MSBuild'
-    projectKey: 'Java-Pipeline_Java-Pipeline'
-    projectName: 'Java-Pipeline'
+    scannerMode: 'Other'
     extraProperties: |
       # Additional properties that will be passed to the scanner,
       # Put one key=value per line, example:
