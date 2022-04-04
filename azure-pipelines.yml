@@ -35,7 +35,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-    sonarQubeRunAnalysis: true
+    
 
 - task: VSTest@2
   inputs:
